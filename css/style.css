@@ -1,0 +1,556 @@
+/* ===== GLOBAL ===== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fdfdfd;
+  color: #333;
+}
+
+/* ===== PRELOADER ===== */
+#preloader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.4s ease, visibility 0.4s;
+}
+#preloader .preloader-logo img {
+  width: 120px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+}
+#preloader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Botón hamburguesa */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+}
+
+/* Versión móvil */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #f4f4f4;
+    width: 100%;
+  }
+  nav.show {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  nav a {
+    margin: 10px 0;
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+
+/* ===== HEADER ===== */
+header {
+  background: linear-gradient(90deg, #003399, #FFD700);
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+header img {
+  height: 50px;
+  vertical-align: middle;
+}
+header h1 {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.6rem;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 8px;
+ 
+}
+nav a {
+  margin: 5px 10px;
+  text-decoration: none;
+  color: #003399;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.2s;
+}
+nav a:hover {
+  background: #FFD700;
+  color: #003399;
+  transform: scale(1.05);
+}
+
+
+
+
+/* ===== CARDS ===== */
+section {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-family: 'Lobster', cursive;
+}
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+.card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 2px solid #eee;
+}
+.card-body {
+  padding: 15px;
+  flex: 1;
+}
+.card-body h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #003399;
+}
+.card-body p {
+  margin: 5px 0;
+  color: #555;
+}
+.price {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #d62828;
+}
+.btn {
+  background: linear-gradient(90deg, #FFE700, #003399);
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  border-radius: 0 0 20px 20px;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: linear-gradient(90deg, #FFE700, #003399);
+}
+ /* Footer  background: #3674B5;*/
+/* footer {
+  background:linear-gradient(90deg, #FFE700, #003399);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+footer p {
+  margin-bottom: 10px;
+}
+
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+footer .social-icons a {
+  font-size: 1.4rem;
+  color: white;
+  background: #3674B5;;  color base antes de hover 
+   width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.3s, background 0.3s;
+} */
+
+
+
+/* Footer */
+footer {
+  background: linear-gradient(90deg, #FFE700, #003399);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+footer p {
+  margin-bottom: 10px;
+}
+
+/* Redes sociales */
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+footer .social-icons a {
+  font-size: 1.4rem;
+  color: white;
+  background: #3674B5;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.3s, background 0.3s;
+}
+
+/* Hover colores */
+footer .social-icons a[href*="whatsapp"]:hover { background: #25D366; }
+footer .social-icons a[href*="instagram"]:hover { background: #E1306C; }
+footer .social-icons a[href*="facebook"]:hover { background: #1877F2; }
+
+/* Métodos de pago */
+.metodos-pago {
+  display: flex;
+  flex-direction: column; /* en móvil: uno debajo del otro */
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.pago {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.1);
+  padding: 8px 15px;
+  border-radius: 10px;
+}
+
+.pago img {
+  width: 40px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.pago span {
+  font-size: 0.95rem;
+}
+
+/* En pantallas grandes: Nequi y Bancolombia uno al lado del otro */
+@media (min-width: 768px) {
+  .metodos-pago {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+
+/* Hover colores por red */
+footer .social-icons a[href*="whatsapp"]:hover { background: #25D366; }
+footer .social-icons a[href*="instagram"]:hover { background: #E1306C; }
+footer .social-icons a[href*="facebook"]:hover { background: #1877F2; }
+
+/* Efecto campana */
+@keyframes bell {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  50% { transform: rotate(-15deg); }
+  75% { transform: rotate(5deg); }
+}
+footer .social-icons a:hover i {
+  animation: bell 0.6s ease-in-out;
+}  
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav a {
+    margin: 5px 0;
+    width: 90%;
+    text-align: center;
+  }
+  .menu-grid {
+    grid-template-columns: 1fr; /* una sola columna en móvil */
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none; /* por defecto oculto */
+    flex-direction: column;
+    background: #f9f9f9;
+    width: 100%;
+    border-top: 2px solid #FFD700;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: absolute;
+    top: 70px; /* justo debajo del header */
+    left: 0;
+  }
+
+  nav.show {
+    display: flex; /* se muestra al hacer click en el toggle */
+  }
+
+  nav a {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+
+.nequi {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.nequi img {
+  width: 60px;
+  height: auto;
+}
+
+
+
+
+.banco {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.banco img {
+  width: 60px;
+  height: auto;
+}
+
+.pago-opcion {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.pago-opcion img {
+  width: 150px;
+  margin-bottom: 8px;
+}
+
+
+
+
+
+
+
+/* Contenedor */
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+/* Botones genéricos */
+.floating-btn {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s;
+  font-size: 1.5rem;
+}
+
+.floating-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Tooltip */
+.floating-btn .tooltip {
+  position: absolute;
+  right: 65px;
+  background: #003399;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.3s, transform 0.3s;
+  white-space: nowrap;
+}
+
+.floating-btn:hover .tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Botón Nequi especial */
+.nequi img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Animación campana */
+@keyframes bell {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-15deg); }
+  75% { transform: rotate(15deg); }
+}
+
+.nequi.shake {
+  animation: bell 0.6s ease;
+}
+
+/* Colores redes */
+.whatsapp { color: #25D366; }
+.instagram { color: #E4405F; }
+.facebook { color: #1877F2; }
+
+/* Íconos dentro */
+.floating-btn i {
+  font-size: 1.8rem;
+}
+
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 320px;
+}
+
+.modal-content img {
+  width: 200px;
+  margin: 15px 0;
+}
+
+.modal .close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.nequi { color: #7F3DBC; }       /* Morado Nequi */
+.whatsapp { color: #25D366; }    /* Verde WhatsApp */
+.instagram { color: #E4405F; }   /* Rosa Instagram */
+.facebook { color: #1877F2; }    /* Azul Facebook */
+.banco {color:#FFCC00;}
+/* Botón flotante Bancolombia */
+.floating-btn.bancolombia {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: white;
+  color: #FFCC00; /* Amarillo Bancolombia */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s;
+  font-size: 1.5rem;
+}
+
+.floating-btn.bancolombia:hover {
+  transform: scale(1.1);
+}
+
+/* Imagen dentro del botón */
+.floating-btn.bancolombia img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+
+    /* Colores por sección */
+#picadas { background: #fff8dc; } /* amarillo claro */
+#almuerzos { background: #e6f0ff; } /* azul claro */
+#desayunos { background: #fff2e6; } /* naranja suave */
+#infantil { background: #e6fff2; } /* verde menta */
+#especiales { background: #ffe6e6; } /* rojo suave */
+#bebidas { background: #e6faff; } /* celeste */
+#licores { background: #fff9e6; } /* dorado claro */
+#cheladas { background: #f0e6ff; } /* lila claro */
+#whisky {background: #fff9e6;}
+#cervezas {background: #FFF9BD;}
+#raspados {background: #9ECAD6;}
+#limonadas{background: #DDF6D2;}
+#jugos { background: #f0e6ff; }
+#adiciones { background: #fff2e6;; }
